@@ -29,7 +29,7 @@ const Register = () => {
       const res = await createUserWithEmailAndPassword(auth, email, password);
 
       const date = new Date().getTime();
-      const storageRef = ref(storage, `${displayName + date}`); //TU POPATRZEC CZY MOZNA TO ZROBIC UUID
+      const storageRef = ref(storage, `${displayName + date}`); 
 
       await uploadBytesResumable(storageRef, file).then(() => {
         getDownloadURL(storageRef).then(async (downloadURL) => {
